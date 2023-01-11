@@ -19,15 +19,20 @@ def sorteia_numeros(limite, quantidade):
     return numeros
 
 # list comprehension para quantidade desejada de sorteios
-senas = [sorteia_numeros(60, 6) for x in range(1000)]
+senas = [sorteia_numeros(60, 6) for x in range(100)]
 
-print('\n'.join(str(row) for row in senas))
+#print('\n'.join(str(row) for row in senas))
 
 #juntando os números em uma única lista
 senas = np.array(senas)
 senas = np.sort(senas.flatten())
 
 #Mostrando a incidência de números
-sns.countplot(x=senas)
+
+g = sns.countplot(x=senas)
+g.set_title('Incidência de números')
+g.set(xlabel='Números sorteados',
+ylabel='Quantidade de sorteios')
 
 plt.show()
+
