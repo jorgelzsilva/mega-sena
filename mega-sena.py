@@ -19,4 +19,3 @@ def sorteia_numeros(limite, quantidade):
 senas = [sorteia_numeros(60, 6) for x in range(1)]
 
 print('\n'.join(str(row) for row in senas))
-#este é um teste
