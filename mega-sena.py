@@ -20,7 +20,8 @@ def sorteia_numeros(limite, quantidade):
 
 
 # list comprehension para quantidade desejada de sorteios
-senas = [sorteia_numeros(60, 6) for x in range(10)]
+sorteios = 100
+senas = [sorteia_numeros(60, 6) for x in range(sorteios)]
 
 #print('\n'.join(str(row) for row in senas))
 
@@ -29,10 +30,12 @@ senas = np.array(senas)
 senas = np.sort(senas.flatten())
 
 #Mostrando a incidência de números
-
+plt.figure(figsize=(20,5))
 g = sns.countplot(x=senas)
-g.set_title('Incidência de números')
+g.set_title(f'Incidência de números em {sorteios} sorteios')
 g.set(xlabel='Números sorteados',
 ylabel='Quantidade de sorteios')
+
+plt.savefig(f'numero-sorteados-{sorteios}.svg')
 
 plt.show()
