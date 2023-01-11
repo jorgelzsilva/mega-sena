@@ -18,8 +18,9 @@ def sorteia_numeros(limite, quantidade):
     numeros.sort()
     return numeros
 
+
 # list comprehension para quantidade desejada de sorteios
-senas = [sorteia_numeros(60, 6) for x in range(100)]
+senas = [sorteia_numeros(60, 6) for x in range(10)]
 
 #print('\n'.join(str(row) for row in senas))
 
@@ -35,4 +36,3 @@ g.set(xlabel='Números sorteados',
 ylabel='Quantidade de sorteios')
 
 plt.show()
-
