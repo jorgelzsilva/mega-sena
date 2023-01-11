@@ -1,4 +1,5 @@
 from random import sample
+import numpy as np
 
 def sorteia_numeros(limite, quantidade):
     """sorteia uma quantidade especificada de números únicos 
@@ -16,6 +17,16 @@ def sorteia_numeros(limite, quantidade):
     return numeros
 
 # list comprehension para quantidade desejada de sorteios
-senas = [sorteia_numeros(60, 6) for x in range(1)]
+senas = [sorteia_numeros(60, 6) for x in range(100)]
 
 print('\n'.join(str(row) for row in senas))
+
+#juntando os números em uma única lista
+senas = np.array(senas)
+print(type(senas))
+
+print(senas.shape)
+
+senas = senas.flatten()
+
+print(senas)
