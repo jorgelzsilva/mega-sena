@@ -1,5 +1,7 @@
 from random import sample
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def sorteia_numeros(limite, quantidade):
     """sorteia uma quantidade especificada de números únicos 
@@ -17,16 +19,15 @@ def sorteia_numeros(limite, quantidade):
     return numeros
 
 # list comprehension para quantidade desejada de sorteios
-senas = [sorteia_numeros(60, 6) for x in range(100)]
+senas = [sorteia_numeros(60, 6) for x in range(1000)]
 
 print('\n'.join(str(row) for row in senas))
 
 #juntando os números em uma única lista
 senas = np.array(senas)
-print(type(senas))
+senas = np.sort(senas.flatten())
 
-print(senas.shape)
+#Mostrando a incidência de números
+sns.countplot(x=senas)
 
-senas = senas.flatten()
-
-print(senas)
+plt.show()
